@@ -8,13 +8,13 @@ module.exports.findAll = (req, res) => {
 
 module.exports.findOne = (req, res) => {
     Joke.findOne({ _id: req.params.id })
-        .then(oneJoke => res.json({ jokes: oneJoke}))
+        .then(oneJoke => res.json({ joke: oneJoke}))
         .catch(err => res.json({ message: "Something went wrong", error: err}));
 };
 
 module.exports.createNewJoke = (req, res) => {
     Joke.create(req.body)
-        .then(newlyJoke => res.json({ jokes: newlyJoke }))
+        .then(newlyJoke => res.json({ joke: newlyJoke }))
         .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 
